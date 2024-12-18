@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A660DFE-471F-4366-9C78-4256FB301ADC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MUSIC_FINAL</RootNamespace>
+    <AssemblyName>MUSIC FINAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.26.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.26.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.8\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.9.1.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.0\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.0\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TagLibSharp, Version=2.3.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>..\packages\TagLibSharp.2.3.0\lib\net462\TagLibSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdSharp, Version=0.8.0.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.8.0\lib\net462\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Banco.cs" />
+    <Compile Include="Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base.Designer.cs">
+      <DependentUpon>Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Song.cs" />
+    <Compile Include="Forms\Frm_Acesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Acesso.Designer.cs">
+      <DependentUpon>Frm_Acesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Cadastro.Designer.cs">
+      <DependentUpon>Frm_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Controls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Controls.Designer.cs">
+      <DependentUpon>Frm_Controls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_List.Designer.cs">
+      <DependentUpon>Frm_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Login.Designer.cs">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Musicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Musicas.Designer.cs">
+      <DependentUpon>Frm_Musicas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Player.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Player.Designer.cs">
+      <DependentUpon>Frm_Player.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Seguranca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Seguranca.Designer.cs">
+      <DependentUpon>Frm_Seguranca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ListOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ListOption.Designer.cs">
+      <DependentUpon>ListOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\GlobalStyles.cs" />
+    <Compile Include="CustomControls\TransparetButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\Base.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Base.Designer.cs">
+      <DependentUpon>Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Button.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Button.Designer.cs">
+      <DependentUpon>Button.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Controls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Controls.Designer.cs">
+      <DependentUpon>Controls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Label.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Label.Designer.cs">
+      <DependentUpon>Label.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MediaButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MediaButtons.Designer.cs">
+      <DependentUpon>MediaButtons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MusicData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MusicData.Designer.cs">
+      <DependentUpon>MusicData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Progress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Progress.Designer.cs">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Slider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Slider.Designer.cs">
+      <DependentUpon>Slider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SongItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SongItem.Designer.cs">
+      <DependentUpon>SongItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SongList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SongList.Designer.cs">
+      <DependentUpon>SongList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Textbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Textbox.Designer.cs">
+      <DependentUpon>Textbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Tittlebar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Tittlebar.Designer.cs">
+      <DependentUpon>Tittlebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Variaveis.cs" />
+    <Compile Include="Webserver\Server.cs" />
+    <EmbeddedResource Include="Base.resx">
+      <DependentUpon>Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Acesso.resx">
+      <DependentUpon>Frm_Acesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Cadastro.resx">
+      <DependentUpon>Frm_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Controls.resx">
+      <DependentUpon>Frm_Controls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_List.resx">
+      <DependentUpon>Frm_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Login.resx">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Musicas.resx">
+      <DependentUpon>Frm_Musicas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Player.resx">
+      <DependentUpon>Frm_Player.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Seguranca.resx">
+      <DependentUpon>Frm_Seguranca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\Base.resx">
+      <DependentUpon>Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Button.resx">
+      <DependentUpon>Button.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Controls.resx">
+      <DependentUpon>Controls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Label.resx">
+      <DependentUpon>Label.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ListOption.resx">
+      <DependentUpon>ListOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MediaButtons.resx">
+      <DependentUpon>MediaButtons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MusicData.resx">
+      <DependentUpon>MusicData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Progress.resx">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Slider.resx">
+      <DependentUpon>Slider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SongItem.resx">
+      <DependentUpon>SongItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SongList.resx">
+      <DependentUpon>SongList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Textbox.resx">
+      <DependentUpon>Textbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Tittlebar.resx">
+      <DependentUpon>Tittlebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tra3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disabledEye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chun-lo-astro-2 %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\berserker_in_the_moonlight_by_fazal_sama_d95sn3c %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bowsette_by_kawacy_dcowgqt %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abrar-khan-neural-connection-2 %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hsgnrteo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Camada 19.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+</Project>
